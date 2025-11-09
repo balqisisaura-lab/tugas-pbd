@@ -161,25 +161,27 @@ st.markdown("""
     /* Tab styling */
     .stTabs [data-baseweb="tab-list"] {
         gap: 15px;
-        background: rgba(255, 255, 255, 0.85);
+        background: rgba(255, 255, 255, 0.3);
         backdrop-filter: blur(10px);
         padding: 15px;
         border-radius: 20px;
         margin-bottom: 2rem;
         box-shadow: 0 8px 32px rgba(0,0,0,0.1);
         border: 1px solid rgba(255, 255, 255, 0.5);
+        justify-content: center;
+        display: flex;
     }
     
     .stTabs [data-baseweb="tab"] {
         height: 55px;
         padding: 0 35px;
-        background: rgba(255, 255, 255, 0.9);
+        background: rgba(255, 255, 255, 0.4);
         backdrop-filter: blur(5px);
         border-radius: 15px;
         font-weight: 600;
         font-size: 17px;
-        color: #7fbbdd;
-        border: 2px solid rgba(255, 255, 255, 0.3);
+        color: #2c3e50;
+        border: 2px solid rgba(255, 255, 255, 0.6);
         transition: all 0.3s ease;
     }
     
@@ -247,12 +249,12 @@ st.markdown("""
     
     /* Container for book cards */
     div[data-testid="stVerticalBlock"] > div:has(div.element-container) {
-        background: rgba(255, 255, 255, 0.95);
+        background: rgba(255, 255, 255, 0.5);
         backdrop-filter: blur(10px);
         padding: 2rem;
         border-radius: 20px;
         margin-bottom: 1.5rem;
-        border: 2px solid rgba(255, 255, 255, 0.5);
+        border: 2px solid rgba(255, 255, 255, 0.6);
         transition: all 0.3s ease;
         box-shadow: 0 8px 32px rgba(0,0,0,0.1);
     }
@@ -261,7 +263,7 @@ st.markdown("""
         transform: translateY(-5px);
         box-shadow: 0 15px 40px rgba(127,187,221,0.4);
         border-color: rgba(127,187,221,0.8);
-        background: rgba(255, 255, 255, 0.98);
+        background: rgba(255, 255, 255, 0.7);
     }
     
     /* Button styling */
@@ -323,12 +325,12 @@ st.markdown("""
     
     /* Info cards */
     .info-card {
-        background: rgba(255, 255, 255, 0.95);
+        background: rgba(255, 255, 255, 0.5);
         backdrop-filter: blur(10px);
         padding: 2rem;
         border-radius: 20px;
         text-align: center;
-        border: 2px solid rgba(255, 255, 255, 0.5);
+        border: 2px solid rgba(255, 255, 255, 0.6);
         transition: all 0.3s ease;
         box-shadow: 0 8px 32px rgba(0,0,0,0.1);
         height: 100%;
@@ -338,7 +340,7 @@ st.markdown("""
         transform: translateY(-5px);
         box-shadow: 0 15px 40px rgba(127,187,221,0.4);
         border-color: rgba(127,187,221,0.8);
-        background: rgba(255, 255, 255, 0.98);
+        background: rgba(255, 255, 255, 0.7);
     }
     
     .info-card h3 {
