@@ -24,9 +24,114 @@ st.markdown("""
         display: none;
     }
     
-    /* Background */
+    /* Background with animated gradient */
     .stApp {
-        background: linear-gradient(135deg, #e4e9f2 0%, #b8d4e8 50%, #7fbbdd 100%);
+        background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 25%, #7fbbdd 75%, #667eea 100%);
+        background-size: 400% 400%;
+        animation: gradientShift 15s ease infinite;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    @keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    
+    /* Animated Background Particles - Floating Dots */
+    .stApp::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+            radial-gradient(4px 4px at 20% 30%, rgba(255, 139, 5, 0.8), transparent),
+            radial-gradient(3px 3px at 60% 70%, rgba(127, 187, 221, 0.7), transparent),
+            radial-gradient(5px 5px at 50% 50%, rgba(255, 226, 47, 0.9), transparent),
+            radial-gradient(3px 3px at 80% 10%, rgba(255, 139, 5, 0.7), transparent),
+            radial-gradient(4px 4px at 90% 60%, rgba(127, 187, 221, 0.8), transparent),
+            radial-gradient(3px 3px at 33% 80%, rgba(255, 226, 47, 0.6), transparent),
+            radial-gradient(5px 5px at 15% 15%, rgba(255, 255, 255, 0.7), transparent),
+            radial-gradient(4px 4px at 75% 85%, rgba(255, 139, 5, 0.8), transparent),
+            radial-gradient(3px 3px at 45% 25%, rgba(127, 187, 221, 0.7), transparent),
+            radial-gradient(5px 5px at 85% 45%, rgba(255, 226, 47, 0.8), transparent);
+        background-size: 200% 200%;
+        animation: particleFloat 20s ease-in-out infinite;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    @keyframes particleFloat {
+        0%, 100% { 
+            background-position: 0% 0%, 100% 100%, 50% 50%, 80% 10%, 90% 60%, 33% 80%, 15% 15%, 75% 85%, 45% 25%, 85% 45%;
+            opacity: 1;
+        }
+        25% { 
+            background-position: 100% 50%, 0% 50%, 25% 75%, 60% 30%, 70% 80%, 50% 60%, 40% 40%, 60% 70%, 30% 50%, 70% 30%;
+            opacity: 0.8;
+        }
+        50% { 
+            background-position: 50% 100%, 50% 0%, 75% 25%, 40% 50%, 50% 40%, 70% 40%, 80% 80%, 30% 30%, 60% 70%, 40% 60%;
+            opacity: 1;
+        }
+        75% { 
+            background-position: 0% 50%, 100% 50%, 60% 60%, 20% 70%, 30% 20%, 40% 70%, 20% 60%, 80% 50%, 50% 40%, 60% 80%;
+            opacity: 0.8;
+        }
+    }
+
+    /* Falling Glitter Effect */
+    .stApp::after {
+        content: '';
+        position: fixed;
+        top: -50%;
+        left: 0;
+        width: 100%;
+        height: 150%;
+        background-image: 
+            radial-gradient(3px 3px at 10% 10%, rgba(255, 139, 5, 1), transparent),
+            radial-gradient(4px 4px at 20% 30%, rgba(255, 255, 255, 0.9), transparent),
+            radial-gradient(3px 3px at 30% 50%, rgba(127, 187, 221, 0.9), transparent),
+            radial-gradient(5px 5px at 40% 20%, rgba(255, 226, 47, 0.9), transparent),
+            radial-gradient(3px 3px at 50% 40%, rgba(255, 255, 255, 0.8), transparent),
+            radial-gradient(4px 4px at 60% 60%, rgba(255, 139, 5, 0.9), transparent),
+            radial-gradient(3px 3px at 70% 30%, rgba(127, 187, 221, 0.9), transparent),
+            radial-gradient(5px 5px at 80% 50%, rgba(255, 255, 255, 1), transparent),
+            radial-gradient(4px 4px at 90% 70%, rgba(255, 139, 5, 1), transparent),
+            radial-gradient(3px 3px at 15% 80%, rgba(255, 226, 47, 0.9), transparent),
+            radial-gradient(4px 4px at 25% 60%, rgba(255, 255, 255, 0.8), transparent),
+            radial-gradient(3px 3px at 35% 40%, rgba(127, 187, 221, 0.9), transparent),
+            radial-gradient(5px 5px at 45% 70%, rgba(255, 139, 5, 0.9), transparent),
+            radial-gradient(3px 3px at 55% 20%, rgba(255, 226, 47, 0.8), transparent),
+            radial-gradient(4px 4px at 65% 80%, rgba(255, 255, 255, 0.9), transparent),
+            radial-gradient(3px 3px at 75% 45%, rgba(127, 187, 221, 1), transparent),
+            radial-gradient(5px 5px at 85% 65%, rgba(255, 139, 5, 0.9), transparent),
+            radial-gradient(4px 4px at 95% 35%, rgba(255, 255, 255, 1), transparent),
+            radial-gradient(3px 3px at 5% 55%, rgba(127, 187, 221, 0.8), transparent),
+            radial-gradient(4px 4px at 12% 25%, rgba(255, 226, 47, 0.9), transparent);
+        background-size: 100% 100%;
+        animation: glitterFall 12s linear infinite;
+        pointer-events: none;
+        z-index: 0;
+        opacity: 1;
+    }
+
+    @keyframes glitterFall {
+        0% {
+            transform: translateY(-50%);
+        }
+        100% {
+            transform: translateY(100%);
+        }
+    }
+    
+    /* Make sure content stays above background */
+    .stApp > div {
+        position: relative;
+        z-index: 1;
     }
     
     /* Header styling */
@@ -56,22 +161,25 @@ st.markdown("""
     /* Tab styling */
     .stTabs [data-baseweb="tab-list"] {
         gap: 15px;
-        background: rgba(255, 255, 255, 0.9);
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(10px);
         padding: 15px;
         border-radius: 20px;
         margin-bottom: 2rem;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        border: 1px solid rgba(255, 255, 255, 0.5);
     }
     
     .stTabs [data-baseweb="tab"] {
         height: 55px;
         padding: 0 35px;
-        background: white;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(5px);
         border-radius: 15px;
         font-weight: 600;
         font-size: 17px;
         color: #7fbbdd;
-        border: 2px solid transparent;
+        border: 2px solid rgba(255, 255, 255, 0.3);
         transition: all 0.3s ease;
     }
     
@@ -139,19 +247,21 @@ st.markdown("""
     
     /* Container for book cards */
     div[data-testid="stVerticalBlock"] > div:has(div.element-container) {
-        background: white;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
         padding: 2rem;
         border-radius: 20px;
         margin-bottom: 1.5rem;
-        border: 2px solid #e4e9f2;
+        border: 2px solid rgba(255, 255, 255, 0.5);
         transition: all 0.3s ease;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.1);
     }
     
     div[data-testid="stVerticalBlock"] > div:has(div.element-container):hover {
         transform: translateY(-5px);
-        box-shadow: 0 15px 40px rgba(127,187,221,0.3);
-        border-color: #7fbbdd;
+        box-shadow: 0 15px 40px rgba(127,187,221,0.4);
+        border-color: rgba(127,187,221,0.8);
+        background: rgba(255, 255, 255, 0.98);
     }
     
     /* Button styling */
@@ -213,20 +323,22 @@ st.markdown("""
     
     /* Info cards */
     .info-card {
-        background: white;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
         padding: 2rem;
         border-radius: 20px;
         text-align: center;
-        border: 2px solid #e4e9f2;
+        border: 2px solid rgba(255, 255, 255, 0.5);
         transition: all 0.3s ease;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.1);
         height: 100%;
     }
     
     .info-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(127,187,221,0.3);
-        border-color: #7fbbdd;
+        box-shadow: 0 15px 40px rgba(127,187,221,0.4);
+        border-color: rgba(127,187,221,0.8);
+        background: rgba(255, 255, 255, 0.98);
     }
     
     .info-card h3 {
@@ -275,13 +387,13 @@ books_data = {
         'Matahari'
     ],
     'Penulis': [
-        'Hasbi Yasin, dkk',
+        'Unknown',
         'Tere Liye',
         'Rezzy Eko Caraka',
         'Tere Liye',
         'Tere Liye',
-        'Tere Liye',
-        'Tere Liye',
+        'Unknown',
+        'Unknown',
         'Tere Liye'
     ],
     'Kategori': [
@@ -378,7 +490,7 @@ with tab2:
         <p style='font-size: 1.1rem; margin: 20px 0;'>
             Admin kami siap membantu Anda!
         </p>
-        <a href="https://wa.me/62895330277258?text=Halo%20admin%20BookRelink,%20saya%20ingin%20bertanya%20tentang%20buku" 
+        <a href="https://wa.me/6289533027725?text=Halo%20admin%20BookRelink,%20saya%20ingin%20bertanya%20tentang%20buku" 
            target="_blank" 
            class="wa-button">
             💬 Chat WhatsApp Admin
