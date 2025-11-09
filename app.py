@@ -378,7 +378,7 @@ with tab2:
         <p style='font-size: 1.1rem; margin: 20px 0;'>
             Admin kami siap membantu Anda!
         </p>
-        <a href="https://wa.me/6289533027725?text=Halo%20admin%20BookRelink,%20saya%20ingin%20bertanya%20tentang%20buku" 
+        <a href="https://wa.me/62895330277258?text=Halo%20admin%20BookRelink,%20saya%20ingin%20bertanya%20tentang%20buku" 
            target="_blank" 
            class="wa-button">
             💬 Chat WhatsApp Admin
