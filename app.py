@@ -9,7 +9,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# CSS Custom dengan Animasi & Color Palette Orange-Blue
+# CSS Custom dengan Animasi & Color Palette Orange-Blue + Responsive
 st.markdown("""
 <style>
     /* Import Google Fonts */
@@ -364,6 +364,167 @@ st.markdown("""
         height: 2px;
         background: linear-gradient(90deg, transparent, #7fbbdd, transparent);
         margin: 2rem 0;
+    }
+    
+    /* ========== RESPONSIVE MOBILE ========== */
+    @media screen and (max-width: 768px) {
+        /* Header mobile */
+        .main-header {
+            padding: 2rem 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 15px;
+        }
+        
+        .main-header h1 {
+            font-size: 2rem;
+        }
+        
+        .main-header p {
+            font-size: 0.9rem;
+        }
+        
+        /* Tab mobile */
+        .stTabs [data-baseweb="tab-list"] {
+            gap: 8px;
+            padding: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .stTabs [data-baseweb="tab"] {
+            height: 45px;
+            padding: 0 20px;
+            font-size: 14px;
+            flex: 1;
+            min-width: 120px;
+        }
+        
+        .stTabs [data-baseweb="tab"]:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Book cards mobile */
+        div[data-testid="stVerticalBlock"] > div:has(div.element-container) {
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 15px;
+        }
+        
+        div[data-testid="stVerticalBlock"] > div:has(div.element-container):hover {
+            transform: translateY(-3px);
+        }
+        
+        .book-title {
+            font-size: 1.3rem;
+        }
+        
+        .book-author {
+            font-size: 0.95rem;
+        }
+        
+        .category-badge {
+            padding: 6px 15px;
+            font-size: 0.8rem;
+        }
+        
+        /* Button mobile */
+        .stButton > button {
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+        
+        .stButton > button:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Contact section mobile */
+        .contact-section {
+            padding: 2.5rem 1.5rem;
+            margin-top: 1.5rem;
+            border-radius: 15px;
+        }
+        
+        .contact-section h2 {
+            font-size: 1.8rem;
+        }
+        
+        .contact-section p {
+            font-size: 0.95rem !important;
+        }
+        
+        .wa-button {
+            padding: 15px 35px;
+            font-size: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .wa-button:hover {
+            transform: translateY(-3px) scale(1.02);
+        }
+        
+        /* Info cards mobile */
+        .info-card {
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 15px;
+        }
+        
+        .info-card h3 {
+            font-size: 1.2rem;
+        }
+        
+        .info-card p {
+            font-size: 0.9rem;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        /* Search & Filter mobile */
+        .stTextInput > div > div > input {
+            padding: 10px 15px;
+            font-size: 14px;
+            border-radius: 12px;
+        }
+        
+        .stSelectbox > div > div {
+            border-radius: 12px;
+        }
+        
+        /* Reduce glitter effect on mobile for performance */
+        .stApp::after {
+            opacity: 0.5;
+        }
+    }
+    
+    /* Extra small devices */
+    @media screen and (max-width: 480px) {
+        .main-header h1 {
+            font-size: 1.6rem;
+        }
+        
+        .main-header p {
+            font-size: 0.85rem;
+        }
+        
+        .stTabs [data-baseweb="tab"] {
+            padding: 0 15px;
+            font-size: 13px;
+            min-width: 100px;
+        }
+        
+        .book-title {
+            font-size: 1.1rem;
+        }
+        
+        .contact-section h2 {
+            font-size: 1.5rem;
+        }
+        
+        .wa-button {
+            padding: 12px 25px;
+            font-size: 0.9rem;
+        }
     }
 </style>
 """, unsafe_allow_html=True)
