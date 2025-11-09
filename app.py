@@ -387,13 +387,13 @@ books_data = {
         'Matahari'
     ],
     'Penulis': [
-        'Unknown',
+        'Hasbi Yasin, dkk',
         'Tere Liye',
         'Rezzy Eko Caraka',
         'Tere Liye',
         'Tere Liye',
-        'Unknown',
-        'Unknown',
+        'Tere Liye',
+        'Tere Liye',
         'Tere Liye'
     ],
     'Kategori': [
@@ -490,7 +490,7 @@ with tab2:
         <p style='font-size: 1.1rem; margin: 20px 0;'>
             Admin kami siap membantu Anda!
         </p>
-        <a href="https://wa.me/6289533027725?text=Halo%20admin%20BookRelink,%20saya%20ingin%20bertanya%20tentang%20buku" 
+        <a href="https://wa.me/62895330277258?text=Halo%20admin%20BookRelink,%20saya%20ingin%20bertanya%20tentang%20buku" 
            target="_blank" 
            class="wa-button">
             💬 Chat WhatsApp Admin
@@ -535,7 +535,7 @@ st.markdown("<br><br>", unsafe_allow_html=True)
 st.markdown("<hr>", unsafe_allow_html=True)
 st.markdown("""
 <div style='text-align: center; color: #7fbbdd; padding: 2rem 0;'>
-    <p style='font-size: 1rem; font-weight: 600;'>© 2024 BookRelink - Perpustakaan Digital</p>
+    <p style='font-size: 1rem; font-weight: 600;'>© 2025 BookRelink - Perpustakaan Digital</p>
     <p style='font-size: 0.9rem;'>Dibuat dengan ❤️ untuk memudahkan akses pendidikan</p>
 </div>
 """, unsafe_allow_html=True)
