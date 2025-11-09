@@ -136,13 +136,13 @@ books_data = {
         'Matahari'
     ],
     'Penulis': [
-        'Unknown',
+        'Hasbi Yasin, dkk',
         'Tere Liye',
         'Rezzy Eko Caraka',
         'Tere Liye',
         'Tere Liye',
-        'Unknown',
-        'Unknown',
+        'Tere Liye',
+        'Tere Liye',
         'Tere Liye'
     ],
     'Kategori': [
