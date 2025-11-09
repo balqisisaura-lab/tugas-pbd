@@ -56,8 +56,14 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # DATA BUKU
-# Ganti data ini dengan buku-buku yang kamu punya
-# Format: Judul, Penulis, Kategori, Link Google Drive
+# CARA MENGISI:
+# 1. Upload file PDF ke Google Drive
+# 2. Klik kanan > Get Link > Pastikan "Anyone with the link can view"
+# 3. Copy FILE_ID dari link (bagian setelah /d/ dan sebelum /view)
+#    Contoh: https://drive.google.com/file/d/1S3nYha3ItXuVzlY9v6rRZDCbs6w1dXgr/view
+#    FILE_ID = 1S3nYha3ItXuVzlY9v6rRZDCbs6w1dXgr
+# 4. Masukkan FILE_ID ke list 'FileID' di bawah
+
 books_data = {
     'Judul': [
         'Belajar Python untuk Pemula',
@@ -80,16 +86,21 @@ books_data = {
         'Bahasa',
         'Sains'
     ],
-    'Link': [
-        'https://drive.google.com/file/d/YOUR_FILE_ID_1/view',
-        'https://drive.google.com/file/d/YOUR_FILE_ID_2/view',
-        'https://drive.google.com/file/d/YOUR_FILE_ID_3/view',
-        'https://drive.google.com/file/d/YOUR_FILE_ID_4/view',
-        'https://drive.google.com/file/d/YOUR_FILE_ID_5/view'
+    'FileID': [
+        '1S3nYha3ItXuVzlY9v6rRZDCbs6w1dXgr',  # Contoh FILE_ID dari link kamu
+        'YOUR_FILE_ID_2',
+        'YOUR_FILE_ID_3',
+        'YOUR_FILE_ID_4',
+        'YOUR_FILE_ID_5'
     ]
 }
 
 df_books = pd.DataFrame(books_data)
+
+# Konversi FILE_ID ke format preview yang langsung buka PDF
+df_books['Link'] = df_books['FileID'].apply(
+    lambda x: f'https://drive.google.com/file/d/{x}/preview'
+)
 
 # Sidebar
 with st.sidebar:
